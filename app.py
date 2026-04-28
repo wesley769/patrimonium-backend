@@ -12,11 +12,14 @@ import re
 
 app = Flask(__name__)
 CORS(app, origins=[
-    "https://patrimonium-finance*.vercel.app",
+    "https://patrimonium-finance-bk087cjiv-wesley-1800s-projects.vercel.app",
+    "https://patrimonium-finance-git-main-wesley-1800s-projects.vercel.app",
+    "https://patrimonium-finance-wesley-1800s-projects.vercel.app",
+    "https://patrimonium-finance.vercel.app",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     "http://localhost:5500",
-    "file://",
+    "null",
 ], supports_credentials=True)
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
@@ -403,3 +406,4 @@ def reset_senha(usuario_id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
+
