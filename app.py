@@ -54,7 +54,7 @@ JWT_EXP_H    = int(os.environ.get("JWT_EXP_H", "8"))
 # ─── DB ──────────────────────────────────────────────────
 def get_db():
     if "db" not in g:
-        g.db = psycopg.connect(DATABASE_URL, row_factory=dict_row)
+        g.db = psycopg.connect(DATABASE_URL, row_factory=dict_row, prepare_threshold=None)
     return g.db
 
 @app.teardown_appcontext
